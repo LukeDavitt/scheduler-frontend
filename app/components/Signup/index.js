@@ -1,8 +1,9 @@
 import React from "react"
 import cssModules from "react-css-modules"
 import style from "./style.css"
-
-import { default as Button } from "../Button"
+import { Button } from 'react-toolbox/lib/button'
+import Input from 'react-toolbox/lib/input';
+//import { default as Button } from "../Button"
 
 export class Signup extends React.Component {
   constructor(props) {
@@ -19,18 +20,18 @@ export class Signup extends React.Component {
       <div className={style.wrapper}>
         <div className={style.form}>
           <div className={style.inputGroup}>
-            <input
+            <Input
               placeholder="Username"
-              className={style.input}
               type="text"
               id="signup-username" />
           </div>
           <div className={style.inputGroup}>
-            <input
-              placeholder="Email"
-              className={style.input}
-              type="text"
+            <Input
+              type="email"
+              icon="email"
               id="signup-email" />
+            <Input type='email' label='Email address' icon='email' />
+
           </div>
           <div className={style.inputGroup}>
             <input
@@ -46,12 +47,7 @@ export class Signup extends React.Component {
               type="password"
               id="signup-verify-password" />
           </div>
-          <Button
-            onClick={this.submit}
-            style={{ width: "100%" }}
-            type="primary">
-            Submit
-          </Button>
+          <Button onClick={this.submit} label="Submit" />
         </div>
       </div>
     )

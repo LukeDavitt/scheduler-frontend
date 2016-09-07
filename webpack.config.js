@@ -25,6 +25,10 @@ module.exports = {
         loader: 'style!css?modules&importLoaders=1&localIdentName=[local]_[hash:base64:5]!postcss',
         include: path.join(__dirname, 'app'),
         exclude: /node_modules/
+      },
+      {
+        test: /\.scss$/,
+        loader: 'style!css?sourceMap&modules&importLoaders=1&localIdentName=[name]__[local]___[hash:base64:5]!sass?sourceMap'
       }
     ]
   },
