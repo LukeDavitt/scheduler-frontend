@@ -10,6 +10,10 @@ $button-neutral-color-hover: #bcde60;
   margin-top: 20px;
   border-radius: 0;
   text-transform: none;
+  height: inherit;
+  line-height: inherit;
+  padding-top: 0.8rem;
+  padding-bottom: 0.8rem;
 }
 
 .neutral:not([disabled]) {
