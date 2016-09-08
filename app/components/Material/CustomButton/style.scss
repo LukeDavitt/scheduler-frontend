@@ -1,0 +1,45 @@
+@import "~react-toolbox/lib/button/theme";
+
+$button-neutral-color-hover: #bcde60;
+
+.button {
+  background: #bcde60;
+  font-size: 1rem;
+  color: #fff !important;
+  min-width: inherit;
+  margin-top: 20px;
+  border-radius: 0;
+  text-transform: none;
+}
+
+.neutral:not([disabled]) {
+  &.raised, &.floating {
+    color: $button-neutral-color-contrast;
+    background-color: $button-neutral-color;
+  }
+  &.flat, &.toggle {
+    color: $button-neutral-color-contrast;
+    &:focus:not(:active) {
+      background: $button-neutral-color-hover;
+    }
+  }
+  &.flat:hover {
+    background: $button-neutral-color-hover;
+  }
+
+  &.inverse {
+    &.raised, &.floating {
+      color: $button-neutral-color;
+      background-color: $button-neutral-color-contrast;
+    }
+    &.flat, &.toggle {
+      color: $button-neutral-color;
+      &:focus:not(:active) {
+        background: $button-neutral-color-hover;
+      }
+    }
+    &.flat:hover {
+      background: $button-neutral-color-hover;
+    }
+  }
+}

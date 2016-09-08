@@ -1,9 +1,9 @@
 import React from "react"
 import cssModules from "react-css-modules"
 import style from "./style.css"
-import { Button } from 'react-toolbox/lib/button'
-import Input from 'react-toolbox/lib/input';
-//import { default as Button } from "../Button"
+import CustomButton from '../Material/CustomButton'
+import CustomInput from '../Material/CustomInput'
+import mui from 'material-ui'
 
 export class Signup extends React.Component {
   constructor(props) {
@@ -18,36 +18,17 @@ export class Signup extends React.Component {
   render() {
     return (
       <div className={style.wrapper}>
+        <div className={style.themebar}>
+          Create Account
+        </div>
         <div className={style.form}>
-          <div className={style.inputGroup}>
-            <Input
-              placeholder="Username"
-              type="text"
-              id="signup-username" />
+          <CustomInput label="Username" type="text" id="signup-username" className={style.inputText} />
+          <CustomInput type='email' id="signup-email" label='Email address' className={style.inputText}/>
+          <CustomInput type='password' id="signup-password" label='Password' className={style.inputText}/>
+          <CustomInput type='password' id='signup-verify-password' label='Verify Password' className={style.inputText}/>
+          <div className={style.submitContainer}>
+            <CustomButton onClick={this.submit} label="Sign Up" className={style.button} />
           </div>
-          <div className={style.inputGroup}>
-            <Input
-              type="email"
-              icon="email"
-              id="signup-email" />
-            <Input type='email' label='Email address' icon='email' />
-
-          </div>
-          <div className={style.inputGroup}>
-            <input
-              placeholder="Password"
-              className={style.input}
-              type="password"
-              id="signup-password" />
-          </div>
-          <div className={style.inputGroup}>
-            <input
-              placeholder="Verify Password"
-              className={style.input}
-              type="password"
-              id="signup-verify-password" />
-          </div>
-          <Button onClick={this.submit} label="Submit" />
         </div>
       </div>
     )

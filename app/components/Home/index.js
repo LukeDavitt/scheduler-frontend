@@ -15,8 +15,7 @@ export class Home extends React.Component {
 
   render() {
     return (
-      <div className={style.leader}>
-        <h1 className={style.title}>Moser Time Tracker</h1>
+      <div className={style.wrapper}>
         {this.state.formState === "signup" ? <Signup /> : null}
         {this.state.formState === "login" ? <Login /> : null}
       </div>
