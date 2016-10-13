@@ -1,9 +1,12 @@
 import React from "react"
+import { connect } from "react-redux"
 import cssModules from "react-css-modules"
 import style from "./style.css"
 import CustomButton from '../Material/CustomButton'
 import CustomInput from '../Material/CustomInput'
 import mui from 'material-ui'
+import Actions from "../../redux/actions"
+
 
 export class Signup extends React.Component {
   constructor(props) {
@@ -11,8 +14,13 @@ export class Signup extends React.Component {
     this.submit = this.submit.bind(this)
   }
 
-  submit(e) {
-    console.log("Submit button clicked")
+  submit() {
+    const user = {
+      username: document.getElementById("signup-username").value,
+      email: document.getElementById("signup-email").value,
+      password: document.getElementById("signup-password").value
+    }
+    this.props.dispatch(Actions.userNew(user))
   }
 
   render() {
@@ -35,4 +43,4 @@ export class Signup extends React.Component {
   }
 }
 
-export default cssModules(Signup, style)
+export default connect()(cssModules(Signup, style))
